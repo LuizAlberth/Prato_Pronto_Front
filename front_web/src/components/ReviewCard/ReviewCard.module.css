@@ -1,0 +1,35 @@
+/* src/components/ReviewCard/ReviewCard.module.css */
+
+.reviewCard {
+  background-color: white;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow-sm */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profileImage {
+  width: 3rem; /* w-12 */
+  height: 3rem; /* h-12 */
+  border-radius: 50%; /* rounded-full */
+  object-fit: cover;
+  flex-shrink: 0; /* Evita que a imagem encolha */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600; /* font-semibold */
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.reviewText {
+  font-size: 0.9rem;
+  color: #555;
+}

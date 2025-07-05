@@ -1,0 +1,168 @@
+/* src/pages/Login/LoginPage.module.css */
+
+/* Container principal da página de login */
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente os itens flex */
+  justify-content: center; /* Centraliza verticalmente os itens flex */
+  min-height: 100vh; /* Garante que ocupe a altura total da viewport */
+  width: 100vw; /* Garante que ocupe a largura total da viewport */
+  background-color: #ffedd5; /* bg-orange-100 */
+  position: relative;
+  padding: 1rem; /* p-4 */
+  font-family: 'Inter', sans-serif; /* Usando a fonte Inter, se disponível */
+  box-sizing: border-box; /* Garante que padding não adicione largura extra */
+}
+
+/* Container do formulário de login */
+.formWrapper {
+  background-color: white;
+  padding: 2rem; /* p-8 */
+  border-radius: 1rem; /* rounded-2xl */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); /* shadow-xl */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo dentro do card (título, formulário, links) */
+  max-width: 28rem; /* max-w-md */
+  width: 100%; /* Garante que o card ocupe a largura disponível até o max-width */
+  margin: auto; /* Centraliza o card dentro do flex container se houver espaço extra */
+}
+
+/* Título "Login" */
+.loginTitle {
+  font-size: 2.25rem; /* text-4xl */
+  line-height: 2.5rem;
+  font-family: serif; /* font-serif */
+  color: #c2410c; /* text-orange-700 */
+  margin-bottom: 2rem; /* mb-8 */
+  margin-top: 1rem; /* mt-4 */
+  text-align: center; /* Garante que o texto do título esteja centralizado */
+}
+
+/* Media query para telas maiores (md:text-5xl) */
+@media (min-width: 768px) { /* md breakpoint */
+  .loginTitle {
+    font-size: 3rem; /* text-5xl */
+    line-height: 1;
+  }
+  .formWrapper {
+    padding: 3rem; /* md:p-12 */
+  }
+}
+
+/* Formulário */
+.loginForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+}
+
+/* Container de cada campo (email, senha) */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Rótulos (labels) */
+.label {
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.75rem;
+  font-weight: 500; /* font-medium */
+  color: #4b5563; /* text-gray-700 */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Campos de input */
+.input {
+  padding: 0.75rem; /* p-3 */
+  border: 1px solid #d1d5db; /* border border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  outline: none; /* outline-none */
+  font-size: 1.125rem; /* text-lg */
+  width: 100%; /* Garante que o input ocupe a largura total do seu pai */
+}
+
+/* Estilo de foco para os inputs */
+.input:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #fb923c; /* focus:ring-2 focus:ring-orange-400 */
+}
+
+/* Mensagem de erro */
+.errorMessage {
+  color: #dc2626; /* text-red-600 */
+  text-align: center;
+  font-size: 0.875rem; /* text-sm */
+  margin-top: 0.5rem; /* mt-2 */
+}
+
+/* Botão "Entrar" */
+.loginButton {
+  width: 100%;
+  padding-top: 0.75rem; /* py-3 */
+  padding-bottom: 0.75rem; /* py-3 */
+  margin-top: 1rem; /* mt-4 */
+  font-size: 1.25rem; /* text-xl */
+  /* Estilos do Button component já devem ser aplicados */
+}
+
+/* Links de "Esqueceu a senha?" */
+.forgotPasswordText {
+  margin-top: 1.5rem; /* mt-6 */
+  text-align: center;
+  color: #4b5563; /* text-gray-600 */
+  font-size: 1rem; /* text-base */
+}
+
+.forgotPasswordLink {
+  color: #ea580c; /* text-orange-600 */
+  font-weight: 500; /* font-medium */
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.forgotPasswordLink:hover {
+  color: #c2410c; /* hover:text-orange-800 */
+}
+
+/* Logo no canto inferior esquerdo */
+.logoContainer {
+  position: absolute;
+  bottom: 1rem; /* bottom-4 */
+  left: 1rem; /* left-4 */
+}
+
+.logoImage {
+  width: 6rem; /* w-24 */
+  height: 6rem; /* h-24 */
+  object-fit: contain;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* shadow-lg */
+}
+
+/* Botão Voltar no canto inferior direito */
+.backButtonContainer {
+  position: absolute;
+  bottom: 1rem; /* bottom-4 */
+  right: 1rem; /* right-4 */
+}
+
+.backButton {
+  color: #ea580c; /* text-orange-600 */
+  font-weight: 500; /* font-medium */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.backButton:hover {
+  color: #c2410c; /* hover:text-orange-800 */
+}

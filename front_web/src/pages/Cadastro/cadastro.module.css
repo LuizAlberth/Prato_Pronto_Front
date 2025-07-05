@@ -1,0 +1,120 @@
+.pageContainer {
+  background-color: #FDEBD7;
+  min-height: 100vh; /* Garante que a página tenha no mínimo a altura da tela */
+  width: 100vw;
+  padding: 2rem; /* Adiciona um respiro nas laterais em telas menores */
+  
+  /* A MÁGICA DA CENTRALIZAÇÃO MODERNA */
+  display: grid;
+  place-items: center; 
+}
+
+/* O bloco único que contém tudo */
+.mainBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Espaçamento entre o formulário, o link e o rodapé */
+  width: 100%;
+  max-width: 500px; /* Define uma largura máxima para o bloco */
+}
+
+/* O card branco do formulário */
+.formWrapper {
+  background-color: #FFFFFF;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  color: #D37E30;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.5rem;
+  margin: 0 0 2rem 0;
+  font-weight: normal;
+}
+
+.form {
+  text-align: left;
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #D37E30;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #D37E30;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.submitButton {
+  background-color: #F8B972;
+  color: #FFFFFF;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 0.9rem 2.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 1.5rem auto 0 auto;
+}
+
+.loginLink {
+  margin: 0;
+  font-size: 1rem;
+  font-family: Arial, sans-serif; /* Fonte mais comum para links */
+}
+
+.loginLink a {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* NOVA CLASSE PARA O RODAPÉ */
+.footerRow {
+  display: flex;
+  justify-content: space-between; /* Coloca o logo na esquerda e o botão na direita */
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.logoContainer {
+  background-color: #B95D24;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.logoPlaceholder {
+    color: #FDEBD7;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: #4A2E2A;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}

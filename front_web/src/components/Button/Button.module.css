@@ -1,0 +1,76 @@
+/* src/components/Button/Button.module.css */
+
+/* Classes base do botão */
+.button {
+  font-weight: 600; /* font-semibold */
+  border-radius: 0.5rem; /* rounded-lg */
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; /* transition-colors */
+  transition-duration: 200ms; /* duration-200 */
+  outline: none; /* focus:outline-none */
+  box-shadow: 0 0 0 0.125rem transparent, 0 0 0 0.25rem transparent; /* focus:ring-2 focus:ring-offset-2 - placeholder, será sobrescrito por variantes */
+  cursor: pointer;
+  border: none; /* Remover borda padrão do botão */
+}
+
+/* Variantes de cor */
+.primary {
+  background-color: #fb923c; /* bg-orange-400 */
+  color: white; /* text-white */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+.primary:hover {
+  background-color: #f97316; /* hover:bg-orange-500 */
+}
+
+.primary:focus {
+  box-shadow: 0 0 0 2px #fb923c, 0 0 0 4px #f97316; /* focus:ring-orange-500 */
+}
+
+.secondary {
+  background-color: #e5e7eb; /* bg-gray-200 */
+  color: #374151; /* text-gray-800 */
+}
+
+.secondary:hover {
+  background-color: #d1d5db; /* hover:bg-gray-300 */
+}
+
+.secondary:focus {
+  box-shadow: 0 0 0 2px #9ca3af, 0 0 0 4px #9ca3af; /* focus:ring-gray-400 */
+}
+
+.ghost {
+  background-color: transparent; /* bg-transparent */
+  color: #fb923c; /* text-orange-400 */
+}
+
+.ghost:hover {
+  background-color: #ffead5; /* hover:bg-orange-100 */
+}
+
+.ghost:focus {
+  box-shadow: 0 0 0 2px #fdba74, 0 0 0 4px #fdba74; /* focus:ring-orange-300 */
+}
+
+/* Tamanhos */
+.small {
+  padding: 0.25rem 0.75rem; /* px-3 py-1 */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.medium {
+  padding: 0.5rem 1.5rem; /* px-6 py-2 */
+  font-size: 1rem; /* text-base */
+}
+
+.large {
+  padding: 0.75rem 2rem; /* px-8 py-3 */
+  font-size: 1.125rem; /* text-lg */
+}
+
+/* Estado desabilitado */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

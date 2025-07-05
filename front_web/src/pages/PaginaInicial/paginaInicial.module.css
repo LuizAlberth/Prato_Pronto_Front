@@ -1,0 +1,93 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* Seção Hero */
+.heroSection {
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 4rem;
+}
+
+/* Seção Features */
+.featuresSection {
+  padding: 0 5%;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.featuresGrid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Seção Call to Action (CTA) */
+.ctaSection {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.ctaButton {
+  background-color: #F9C08D;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #4A2E2A;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.loginLink {
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+/* Seção Sobre */
+.aboutSection {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 10%;
+}
+
+.aboutImage {
+  flex: 1;
+}
+
+.aboutImage img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.aboutText {
+  flex: 1.2;
+}
+
+.aboutText h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.aboutText p {
+  line-height: 1.6;
+  font-size: 1rem;
+}

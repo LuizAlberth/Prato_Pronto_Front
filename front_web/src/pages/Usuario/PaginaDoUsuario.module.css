@@ -1,0 +1,139 @@
+/* src/pages/Usuario/PaginaDoUsuario.module.css */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw; /* Garante que ocupe a largura total da viewport */
+  background-color: #f8f8f8;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura/altura */
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 1.5rem;
+  max-width: 1200px; /* Largura máxima para desktop, pode ajustar conforme necessário */
+  width: 100%; /* Garante que ocupe 100% da largura do pai (até o max-width) */
+  margin: 0 auto; /* Centraliza o conteúdo principal */
+  box-sizing: border-box;
+}
+
+.coverPhoto {
+  width: 100%;
+  height: 200px; /* Altura da foto de capa */
+  object-fit: cover;
+  border-radius: 0.75rem; /* rounded-xl */
+  margin-bottom: -4rem; /* Move a foto de perfil para cima da capa */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.profileInfo {
+  display: flex;
+  align-items: flex-end; /* Alinha a foto e o nome na parte inferior */
+  justify-content: space-between; /* Espaça nome/foto e botão */
+  margin-bottom: 2rem;
+  padding: 0 1rem; /* Padding para alinhar com o conteúdo */
+  position: relative; /* Para posicionar elementos dentro */
+  z-index: 1; /* Garante que a info do perfil fique acima da foto de capa */
+}
+
+.profileDetails {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.profileImage {
+  width: 8rem; /* w-32 */
+  height: 8rem; /* h-32 */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white; /* Borda branca */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.username {
+  font-size: 1.75rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.editProfileButton {
+  /* Estilos para o botão Editar Perfil, usará o Button component */
+}
+
+.sectionTitle {
+  font-size: 1.5rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #333;
+  margin-bottom: 1rem;
+  padding-left: 1rem; /* Alinha com o conteúdo */
+}
+
+.favoritesSection,
+.reviewsSection {
+  background-color: #ffedd5; /* bg-orange-100 */
+  border-radius: 0.75rem; /* rounded-xl */
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.recipeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* Uma coluna para avaliações */
+  gap: 1rem;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 1rem;
+  }
+  .profileInfo {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .profileDetails {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .profileImage {
+    width: 6rem;
+    height: 6rem;
+  }
+  .username {
+    font-size: 1.5rem;
+  }
+  .sectionTitle {
+    padding-left: 0;
+    text-align: center;
+  }
+  .favoritesSection,
+  .reviewsSection {
+    padding: 1rem;
+  }
+}
+
+/* Adicionado media query para telas muito grandes (desktop wide) */
+@media (min-width: 1200px) {
+  .mainContent {
+    padding: 2rem; /* Aumenta o padding em telas maiores */
+  }
+  .recipeGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cards um pouco maiores */
+    gap: 2rem; /* Aumenta o gap */
+  }
+}

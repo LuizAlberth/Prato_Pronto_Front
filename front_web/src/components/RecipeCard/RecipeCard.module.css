@@ -1,0 +1,53 @@
+/* src/components/RecipeCard/RecipeCard.module.css */
+
+.card {
+  background-color: white;
+  border-radius: 0.75rem; /* rounded-xl */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+  overflow: hidden; /* Garante que a imagem não vaze */
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* shadow-lg */
+}
+
+.imageContainer {
+  width: 100%;
+  height: 12rem; /* Altura fixa para a imagem */
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra o container sem distorcer */
+}
+
+.content {
+  padding: 1rem; /* p-4 */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Permite que o conteúdo cresça e ocupe o espaço restante */
+}
+
+.title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #333;
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.detail {
+  font-size: 0.875rem; /* text-sm */
+  color: #555;
+  margin-bottom: 0.25rem; /* mb-1 */
+}
+
+.difficulty {
+  font-weight: 500; /* font-medium */
+}

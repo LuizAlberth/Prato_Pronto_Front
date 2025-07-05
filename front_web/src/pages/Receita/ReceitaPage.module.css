@@ -1,0 +1,184 @@
+/* src/pages/Receita/ReceitaPage.module.css */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f8f8f8;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 1.5rem;
+  max-width: 900px; /* Largura máxima para o conteúdo da receita */
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white; /* Fundo branco para o conteúdo da receita */
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem; /* Espaçamento do cabeçalho */
+  margin-bottom: 2rem; /* Espaçamento do rodapé */
+}
+
+.cookProfile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaça perfil e botões */
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.cookDetails {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cookImage {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cookName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  /* Estilos base para os botões de ação (EDITAR, ATUALIZAR, EXCLUIR) */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border: none;
+}
+
+.editButton {
+  background-color: #f0f0f0;
+  color: #555;
+}
+.editButton:hover { background-color: #e0e0e0; }
+
+.updateButton {
+  background-color: #fb923c; /* Cor laranja */
+  color: white;
+}
+.updateButton:hover { background-color: #f97316; }
+
+.deleteButton {
+  background-color: #ef4444; /* Cor vermelha */
+  color: white;
+}
+.deleteButton:hover { background-color: #dc2626; }
+
+
+.recipeDescription {
+  padding: 1.5rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  border-bottom: 1px solid #eee;
+}
+
+.recipeImageContainer {
+  width: 100%;
+  height: 350px; /* Altura fixa para a imagem da receita */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Fundo cinza para placeholder */
+}
+
+.recipeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0 1.5rem;
+}
+
+.ingredientsList {
+  list-style: disc; /* Bolinhas para a lista */
+  padding: 0 1.5rem 1.5rem 2.5rem; /* Ajusta o padding para as bolinhas */
+  color: #555;
+  line-height: 1.6;
+  border-bottom: 1px solid #eee;
+}
+
+.ingredientsList li {
+  margin-bottom: 0.5rem;
+}
+
+.preparationSteps {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.preparationSteps ol {
+  list-style-type: decimal; /* Números para os passos */
+  padding-left: 1.5rem;
+}
+
+.preparationSteps li {
+  margin-bottom: 0.8rem;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .cookProfile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .actionButtons {
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 0.5rem;
+  }
+  .actionButton {
+    flex: 1;
+  }
+  .recipeImageContainer {
+    height: 250px; /* Altura menor em mobile */
+  }
+  .sectionTitle,
+  .recipeDescription,
+  .ingredientsList,
+  .preparationSteps {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .ingredientsList {
+    padding-left: 2rem;
+  }
+}

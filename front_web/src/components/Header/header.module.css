@@ -1,0 +1,67 @@
+/* src/components/Header/Header.module.css */
+
+.header {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
+  gap: 1.25rem; /* gap-5 */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1684px; /* max-w-[1684px] */
+  margin: 0 auto; /* Centraliza o header se a tela for maior que max-width */
+  padding: 1rem; /* Um padding geral para evitar que o conteúdo cole nas bordas */
+  box-sizing: border-box; /* Garante que padding não adicione largura extra */
+}
+
+/* Media query para telas menores (max-md:max-w-full) */
+@media (max-width: 767px) { /* md breakpoint */
+  .header {
+    flex-direction: column; /* Empilha os itens em telas pequenas */
+    align-items: center; /* Centraliza os itens empilhados */
+    gap: 1rem; /* Reduz o gap em telas pequenas */
+    padding: 1rem; /* max-md:px-5 */
+  }
+}
+
+.logo {
+  object-fit: contain;
+  flex-shrink: 0;
+  width: 210px; /* w-[210px] */
+  aspect-ratio: 1.62; /* aspect-[1.62] */
+  max-width: 100%; /* max-w-full */
+  height: auto; /* Garante que a altura se ajuste */
+}
+
+.searchBox {
+  flex-grow: 1; /* Permite que a caixa de busca ocupe o espaço disponível */
+  padding: 0.5rem 3.5rem; /* px-14 pt-2 pb-6 */
+  background-color: rgba(255, 224, 178, 0.7); /* bg-orange-200 bg-opacity-70 */
+  border-radius: 1.875rem; /* rounded-[30px] */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); /* shadow-[0px_4px_4px_rgba(0,0,0,0.25)] */
+  color: black; /* text-black */
+  font-size: 1.5rem; /* text-3xl */
+  display: flex; /* Para centralizar o texto "Busque sua receita aqui..." */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+  min-width: 200px; /* Largura mínima para o campo de busca */
+}
+
+@media (max-width: 767px) {
+  .searchBox {
+    width: 100%; /* Ocupa a largura total em telas pequenas */
+    padding: 0.5rem 1.25rem; /* max-md:px-5 */
+    font-size: 1.25rem; /* Ajuste o tamanho da fonte para telas menores */
+  }
+}
+
+.profileIcon {
+  object-fit: contain;
+  flex-shrink: 0;
+  width: 79px; /* w-[79px] */
+  aspect-ratio: 1.04; /* aspect-[1.04] */
+  border-radius: 50%; /* rounded-full */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* shadow-[0px_4px_10px_rgba(0,0,0,0.25)] */
+  cursor: pointer;
+}

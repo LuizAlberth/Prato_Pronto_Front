@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5%;
+  background-color: #FEF3E8;
+  margin-top: 4rem;
+}
+
+.link {
+  font-weight: 500;
+}
+
+.logoPlaceholder {
+  width: 50px;
+  height: 50px;
+  background-color: #E8843C;
+  border-radius: 50%;
+}

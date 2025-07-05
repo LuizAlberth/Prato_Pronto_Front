@@ -1,0 +1,176 @@
+/* src/pages/Publicacao/PublicacaoPage.module.css */
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #ffedd5; /* Cor de fundo da imagem (laranja claro) */
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.header {
+  background-color: #f9d7b1; /* Cor do cabeçalho da imagem */
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 4rem; /* Tamanho da logo */
+  height: 4rem;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #c2410c; /* Cor do título */
+  flex-grow: 1; /* Permite que o título ocupe o espaço restante */
+  text-align: center;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 2rem;
+  max-width: 900px; /* Largura máxima do formulário */
+  margin: 2rem auto; /* Centraliza o formulário e adiciona margem */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white; /* Fundo branco do formulário */
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas */
+  gap: 1.5rem 2rem; /* Espaçamento entre as linhas e colunas */
+  align-items: start; /* Alinha itens ao topo da célula do grid */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.input,
+.textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box; /* Garante que padding e border não adicionem largura extra */
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #fb923c;
+  box-shadow: 0 0 0 2px rgba(251, 146, 60, 0.2);
+}
+
+.textarea {
+  min-height: 150px; /* Altura mínima para o campo de modo de preparo */
+  resize: vertical; /* Permite redimensionamento vertical */
+}
+
+.imageUploadBox {
+  grid-column: 2; /* Coloca na segunda coluna */
+  grid-row: 1 / span 2; /* Ocupa duas linhas */
+  background-color: #f0f0f0;
+  border: 1px dashed #ccc;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; /* Altura fixa para a caixa de imagem */
+  color: #888;
+  font-size: 1rem;
+  cursor: pointer;
+  overflow: hidden; /* Para a imagem de preview */
+}
+
+.imagePreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.dietaryOptions {
+  grid-column: 1 / span 2; /* Ocupa as duas colunas */
+  margin-top: 1rem;
+}
+
+.dietaryOptions label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.dietaryOptions input[type="radio"] {
+  margin-right: 0.5rem;
+  accent-color: #fb923c; /* Cor do radio button */
+}
+
+.buttonGroup {
+  grid-column: 1 / span 2; /* Ocupa as duas colunas */
+  display: flex;
+  justify-content: flex-end; /* Alinha botões à direita */
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.publishButton {
+  /* Estilos do Button component */
+}
+
+.cancelButton {
+  /* Estilos do Button component */
+}
+
+/* Media queries para responsividade */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .mainContent {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  .imageUploadBox {
+    grid-column: 1; /* Volta para a primeira coluna */
+    grid-row: auto; /* Posição automática */
+    height: 120px;
+  }
+  .buttonGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .publishButton,
+  .cancelButton {
+    width: 100%;
+  }
+}
