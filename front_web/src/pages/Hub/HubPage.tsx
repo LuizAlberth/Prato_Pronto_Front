@@ -1,78 +1,45 @@
 // src/pages/Hub/HubPage.tsx
+
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Header } from '../../components/Header/Header'; // Importe seu componente Header
-import { Button } from '../../components/Button/Button'; // Importe seu componente Button
-import RecipeCard, { type Recipe } from '../../components/RecipeCard/RecipeCard'; // CORREÇÃO: Adicionado 'type' antes de Recipe
-import styles from './HubPage.module.css'; // Importe os estilos do HubPage
+import { Header } from '../../components/Header/Header';
+import { Button } from '../../components/Button/Button';
+import RecipeCard, { type Recipe } from '../../components/RecipeCard/RecipeCard';
+import styles from './HubPage.module.css';
+
+// ALTERAÇÃO: Importando o serviço que busca os dados reais.
+import { getTodasReceitas } from '../../api/ReceitaService'; 
 
 const HubPage: React.FC = () => {
   const navigate = useNavigate();
+  // Este estado agora espera dados no formato do RecipeCard (id, imageSrc, title, etc.)
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // --- Sugestão: Dados de Exemplo vs. Dados Reais ---
-  // Para começar, é MELHOR usar dados de exemplo (dummy data) para construir e estilizar a UI.
-  // Isso permite que você veja o layout funcionando antes mesmo de o backend estar 100% pronto.
-  // Uma vez que o backend esteja pronto, você pode trocar para a lógica de fetch real.
-
-  const dummyRecipes: Recipe[] = [
-    {
-      id: '1',
-      imageSrc: 'https://placehold.co/400x240/FFDDC1/FF8C00?text=Bolinhos+de+Queijo', // Placeholder com cor laranja clara
-      title: 'Bolinhos de Queijo',
-      time: '30 minutos',
-      difficulty: 'Média',
-    },
-    {
-      id: '2',
-      imageSrc: 'https://placehold.co/400x240/FFDDC1/FF8C00?text=Folhados+de+Repolho',
-      title: 'Folhados de Repolho',
-      time: '45 minutos',
-      difficulty: 'Difícil',
-    },
-    {
-      id: '3',
-      imageSrc: 'https://placehold.co/400x240/FFDDC1/FF8C00?text=Espaguete',
-      title: 'Espaguete',
-      time: '45 minutos',
-      difficulty: 'Difícil',
-    },
-    {
-      id: '4',
-      imageSrc: 'https://placehold.co/400x240/FFDDC1/FF8C00?text=Ensopado',
-      title: 'Ensopado',
-      time: '30 minutos',
-      difficulty: 'Média',
-    },
-    {
-      id: '5',
-      imageSrc: 'https://placehold.co/400x240/FFDDC1/FF8C00?text=Strogonoff',
-      title: 'Strogonoff',
-      time: '30 minutos',
-      difficulty: 'Média',
-    },
-    {
-      id: '6',
-      imageSrc: 'https://placehold.co/400x240/FFDDC1/FF8C00?text=Frango+ao+Molho',
-      title: 'Frango ao Molho',
-      time: '45 minutos',
-      difficulty: 'Difícil',
-    },
-  ];
-
   useEffect(() => {
-    // TODO: Implementar a chamada à API do seu backend Spring Boot para buscar receitas
-    // Por enquanto, vamos usar os dados de exemplo para preencher a tela.
+    // Função que agora busca os dados REAIS do backend.
     const fetchRecipes = async () => {
       setLoading(true);
       setError(null);
       try {
-        // Simula um atraso de rede
-        await new Promise(resolve => setTimeout(resolve, 500));
-        setRecipes(dummyRecipes); // Usando dados de exemplo
+        // 1. Busca os dados brutos do backend.
+        const receitasDoBackend = await getTodasReceitas();
+
+        // 2. Transforma os dados do backend para o formato que o RecipeCard espera.
+        const receitasFormatadas = receitasDoBackend.map((receita) => ({
+          id: receita.id.toString(),
+          title: receita.titulo,
+          time: `${receita.tempoPreparo} minutos`,
+          difficulty: receita.dificuldade,
+          // NOTA: A imagem virá do backend no futuro. Por enquanto, usamos um placeholder.
+          imageSrc: `https://placehold.co/400x240/FFDDC1/FF8C00?text=${encodeURIComponent(receita.titulo)}`,
+        }));
+        
+        // 3. Atualiza o estado com os dados formatados e prontos para a UI.
+        setRecipes(receitasFormatadas);
+
       } catch (err) {
         setError('Falha ao carregar receitas. Tente novamente mais tarde.');
         console.error('Erro ao buscar receitas:', err);
@@ -82,21 +49,23 @@ const HubPage: React.FC = () => {
     };
 
     fetchRecipes();
-  }, []);
+  }, []); // O array vazio [] garante que a busca aconteça apenas uma vez.
 
   const handleRecipeClick = (recipeId: string) => {
-    // TODO: Navegar para a página de detalhes da receita
-    navigate(`/receita/${recipeId}`); // Exemplo de rota para detalhes da receita
+    navigate(`/receita/${recipeId}`);
   };
 
   const handlePublishClick = () => {
-    navigate('/publicacao'); // Navega para a tela de Publicação
+    navigate('/publicacao');
   };
 
   const handleProfileClick = () => {
-    navigate('/pagina-do-usuario'); // Navega para a página do usuário
+    navigate('/pagina-do-usuario');
   };
 
+  // O resto do seu componente (lógica de 'loading', 'error' e o JSX) continua o mesmo,
+  // pois ele já está preparado para receber os dados e renderizá-los.
+  
   if (loading) {
     return (
       <div className={styles.hubContainer}>
